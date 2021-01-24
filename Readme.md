@@ -38,4 +38,10 @@ The goal of this project is to learn **how to read and write local files, extrac
 **Expectations**
 - A persistent menu
 - user-input delivers the desired output 
-- logging to both a log file and console/terminal
+- logging to both a log file and console/terminal.
+
+**Screenshots**
+![javac](/assets/Screenshot_javac.png)
+![javac](/assets/Screenshot_jar.png)
+![javac](/assets/jar-running.gif)
+
