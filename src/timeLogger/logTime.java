@@ -2,31 +2,29 @@ package timeLogger;
 
 import java.io.IOException;
 
-/**
- * logTime
- */
+//import java.text.DateFormat;
+
+
 public class logTime {
 
     private static long startTime;
     private static long stopTime;
     private static long elapsedTime;
 
-    /*
-     * Set start time
-     */
-    public static double sTime() {
 
+    public static double sTime() {
+    
         return startTime = System.currentTimeMillis();
     }
 
-    /*
-     * Set end time and subtract start time to get elapsed time
-     */
-    public static double eTime() throws IOException {
+    public static Object eTime() throws IOException {
         stopTime = System.currentTimeMillis();
-        elapsedTime = stopTime - startTime;
-
+        elapsedTime = stopTime - startTime ;
+    
         return elapsedTime;
     }
+
+  
+
 
 }
