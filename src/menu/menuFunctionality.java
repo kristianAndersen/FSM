@@ -40,20 +40,24 @@ public class menuFunctionality {
 
                 switch (mainChoise) {
                     case "a":
-                        printIt("List files");
+                        printIt("List all files");
                         listFiles.fileNames();
                         break;
                     case "b":
-                        printIt("b is pressed");
+                        printIt("List PNG files");
+                        listFiles.listFileByExtention(".png");
                         break;
                     case "c":
-                        printIt("c is pressed");
+                        printIt("List JPG files");
+                        listFiles.listFileByExtention(".jpg");
                         break;
                     case "d":
-                        printIt("d is pressed");
+                        printIt("List JFIF files");
+                        listFiles.listFileByExtention(".jfif");
                         break;
                     case "e":
-                        printIt("e is pressed");
+                        printIt("List TXT files");
+                        listFiles.listFileByExtention(".txt");
                         break;
                     case "q":
                         System.out.println("Exiting Program...");
@@ -72,13 +76,12 @@ public class menuFunctionality {
     /**
      * Clear terminal/console then display menu "GUI" and response to user input
      * 
-     * @throws IOException
      */
     private void printIt(String toPrint) throws IOException {
         clearterminal();
         menuDisplay.displayMenu();
         logTime.sTime();
-        System.out.println(toPrint+"\n"+logTime.eTime());
+        System.out.println("Execution time for "+toPrint+" was"+logTime.eTime()+" ms");
     }
     /**
      * Clear the terminal/console
