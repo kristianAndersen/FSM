@@ -6,7 +6,7 @@ public class filePaths {
 
     private String files;
 
-    public File[] listFiles() {
+    File[] returnlistOfUsableFiles() {
         /**
          * Get full path of all files in /resources foleder
          */

@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import timeLogger.logTime;
+import fileHandlers.listFiles;
 
 /**
  * menuFunctionality
@@ -14,7 +15,7 @@ public class menuFunctionality {
 
     private Scanner input = new Scanner(System.in);
     private menuDisplay menuDisplay = new menuDisplay();
-    //public logTime logTime = new logTime();
+    private listFiles listFiles=new listFiles();
 
     public void menuFunctions() throws IOException {
         String mainChoise;
@@ -39,7 +40,8 @@ public class menuFunctionality {
 
                 switch (mainChoise) {
                     case "a":
-                        printIt("a is pressed");
+                        printIt("List files");
+                        listFiles.fileNames();
                         break;
                     case "b":
                         printIt("b is pressed");
