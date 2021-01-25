@@ -12,7 +12,7 @@ public class logTime {
     private static long elapsedTime;
 
     /*
-     * Set and return the start time
+     * Set start time
      */
     public static double sTime() {
 
