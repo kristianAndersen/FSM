@@ -5,7 +5,7 @@ import java.io.File;
 public class listFiles {
 
     public static File[] listOfFiles;
-    private static filePaths filePaths = new filePaths();
+    public static filePaths filePaths = new filePaths();
 
     public static void fileNames() {
         System.out.println("\n");
@@ -35,7 +35,7 @@ public class listFiles {
     }
 
     public static void listFileByExtention(String fileExtention) {
-        System.out.println("\n");
+        
         boolean fextention;
         listOfFiles = filePaths.returnlistOfUsableFiles();
 

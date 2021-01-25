@@ -17,7 +17,7 @@ public class logTime {
         return startTime = System.currentTimeMillis();
     }
 
-    public static Object eTime() throws IOException {
+    public static double eTime() throws IOException {
         stopTime = System.currentTimeMillis();
         elapsedTime = stopTime - startTime ;
     

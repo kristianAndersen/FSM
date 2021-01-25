@@ -4,7 +4,7 @@ import java.io.File;
 
 public class filePaths {
 
-    private String files;
+    private static String files;
 
     File[] returnlistOfUsableFiles() {
         /**
