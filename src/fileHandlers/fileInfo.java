@@ -84,5 +84,53 @@ public class fileInfo {
 
         return linesCount;
     }
+
+
+    public String SearchWords(String wordToSearch) {
+
+        int wordToCount = 0;
+        String stringToReturn = "";
+        
+       
+        /**If the file is  a text document search for the word */
+        if (extension.equals("txt")) {
+
+            try (BufferedReader buffRead = new BufferedReader(new FileReader(txtFileToSearch))) {
+
+                /**Read the lines in the txt file and match the search word*/
+                String txtLine;
+                while ((txtLine = buffRead.readLine()) != null) {
+
+                    if (txtLine.toLowerCase().matches(".*\\b" + wordToSearch.toLowerCase() + "\\b.*")) {
+
+                        wordToCount++;
+                    }
+
+                }
+
+            } catch (IOException e) {
+                System.out.println("Somthing went horrible wrong and stuff might start to burn " + e);
+            }
+
+        } 
+        
+       /**If wordCound is longer than 0 the word has ben found */
+        if (wordToCount != 0) {
+            stringToReturn = "Yes the file has " + wordToSearch + " and you can find it ine the file " + wordToCount
+                    + " times.\n\nTry another word";
+
+        } else {
+            stringToReturn = "Sorry the word " + wordToSearch
+                    + " is nowhere to be fount in the text.\n\nTry another word";
+
+        }
+        /**If the file is not a text document it cannot be searched */
+        if(!extension.matches("txt")){
+            stringToReturn = "Sorry you can not search for text in this file\n";
+        }
+
+        return stringToReturn;
+
+    }
     
 }

@@ -55,23 +55,28 @@ public class menuFunctionality {
 
                 switch (mainChoise) {
                     case "a":
+                    logTime.sTime();
                         printIt("List all files");
                         listFiles.fileNames();
                         allowFileInfo = true;
                         break;
                     case "b":
+                    logTime.sTime();
                         printIt("List PNG files");
                         listFiles.listFileByExtention(".png");
                         break;
                     case "c":
+                    logTime.sTime();
                         printIt("List JPG files");
                         listFiles.listFileByExtention(".jpg");
                         break;
                     case "d":
+                    logTime.sTime();
                         printIt("List JFIF files");
                         listFiles.listFileByExtention(".jfif");
                         break;
                     case "e":
+                    logTime.sTime();
                         printIt("List TXT files");
                         listFiles.listFileByExtention(".txt");
                         break;
@@ -81,13 +86,15 @@ public class menuFunctionality {
                         break;
                 }
             } else if (match2.find() && allowFileInfo == true) {
-
+                logTime.sTime();
                 int number = Integer.parseInt(mainChoise);
                 printIt("File information");
                 System.out.println(fileInfo.getFileInfo(number));
 
             } else if (match3.find()) {
-
+                logTime.sTime();
+                printIt("Search word");
+                System.out.println(fileInfo.SearchWords(mainChoise));
             } else {
                 String noInput = "sorry mate that was not an option in the menu! try again";
                 printIt(noInput);
@@ -104,8 +111,8 @@ public class menuFunctionality {
     private void printIt(String toPrint) throws IOException {
         clearterminal();
         menuDisplay.displayMenu();
-        logTime.sTime();
-        System.out.println("Execution time for " + toPrint + " was" + logTime.eTime() + " ms");
+        
+        System.out.println("Execution time for " + toPrint + " was " + logTime.eTime() + " ms");
     }
 
     /**
