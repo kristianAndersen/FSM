@@ -39,45 +39,50 @@ public class menuFunctionality {
             Pattern pat = Pattern.compile("^[a-zA-Z]{1}$");
             Matcher match = pat.matcher(mainChoise);
 
-            /** Pick a number any number to select a file you want info about*/
+            /** Pick a number any number to select a file you want info about */
             Pattern pat2 = Pattern.compile("^([0-9]|[1-9][0-9]|100)$");
             Matcher match2 = pat2.matcher(mainChoise);
 
-            /**Search text for words that are longer than 
-             * 2 characters and shorter than 100 includinhg a few special charaters
-             * */
+            /**
+             * Search text for words that are longer than 2 characters and shorter than 100
+             * includinhg a few special charaters
+             */
             Pattern pat3 = Pattern.compile("^[A-Za-zÀ-ȕ0-9(),-_.',]{2,100}+$");
             Matcher match3 = pat3.matcher(mainChoise);
-
 
             /** if user input mach a case satement then preform action */
             if (match.find()) {
 
                 switch (mainChoise) {
                     case "a":
-                    logTime.sTime();
+
                         printIt("List all files");
+                        logTime.sTime("List all files");
                         listFiles.fileNames();
                         allowFileInfo = true;
                         break;
                     case "b":
-                    logTime.sTime();
+                       
                         printIt("List PNG files");
+                        logTime.sTime("List PNG files");
                         listFiles.listFileByExtention(".png");
                         break;
                     case "c":
-                    logTime.sTime();
+                        
                         printIt("List JPG files");
+                        logTime.sTime("List JPG files");
                         listFiles.listFileByExtention(".jpg");
                         break;
                     case "d":
-                    logTime.sTime();
+                       
                         printIt("List JFIF files");
+                        logTime.sTime("List JFIF files");
                         listFiles.listFileByExtention(".jfif");
                         break;
                     case "e":
-                    logTime.sTime();
+                       
                         printIt("List TXT files");
+                        logTime.sTime("List TXT files");
                         listFiles.listFileByExtention(".txt");
                         break;
                     case "q":
@@ -86,14 +91,16 @@ public class menuFunctionality {
                         break;
                 }
             } else if (match2.find() && allowFileInfo == true) {
-                logTime.sTime();
+
                 int number = Integer.parseInt(mainChoise);
                 printIt("File information");
+                logTime.sTime("File information");
                 System.out.println(fileInfo.getFileInfo(number));
 
             } else if (match3.find()) {
-                logTime.sTime();
+
                 printIt("Search word");
+                logTime.sTime("Search word");
                 System.out.println(fileInfo.SearchWords(mainChoise));
             } else {
                 String noInput = "sorry mate that was not an option in the menu! try again";
@@ -111,7 +118,7 @@ public class menuFunctionality {
     private void printIt(String toPrint) throws IOException {
         clearterminal();
         menuDisplay.displayMenu();
-        
+
         System.out.println("Execution time for " + toPrint + " was " + logTime.eTime() + " ms");
     }
 
